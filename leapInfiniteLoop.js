@@ -31,8 +31,12 @@ function HandleFrame (frame){
 function HandleHand(hand){
     for (var i = 0; i < hand.fingers.length; i++){
         finger = hand.fingers[i];
-        if (finger.type == 1){
-            console.log(finger);
-        }
+        HandleFinger(finger)
+    }
+}
+
+function HandleFinger(finger){
+    if (finger.type == 1){
+        console.log(finger);
     }
 }

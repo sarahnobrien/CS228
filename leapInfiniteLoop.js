@@ -23,13 +23,16 @@ function HandleFrame (frame){
     if (frame.hands.length == 1 ){
         var hand = frame.hands[0];
         var fingers = hand.fingers;
-
-        for (var i = 0; i < hand.fingers.length; i++){
-            finger = hand.fingers[i];
-            if (finger.type == 1){
-                console.log(finger);
-            }
+        HandleHand(hand)
         } 
         
+    }
+
+function HandleHand(hand){
+    for (var i = 0; i < hand.fingers.length; i++){
+        finger = hand.fingers[i];
+        if (finger.type == 1){
+            console.log(finger);
+        }
     }
 }

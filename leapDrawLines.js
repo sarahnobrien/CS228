@@ -29,10 +29,10 @@ function HandleFrame (frame){
 }
 
 function HandleHand(hand){
-    for (var i = 0; i < hand.fingers.length; i++){
-        finger = hand.fingers[i];
-        //HandleFinger(finger)
-        for (var j = 0; j < finger.bones.length; j++){
+    for (var j = 3; j >= 0; j--){
+
+        for (var i = 0; i < hand.fingers.length; i++){
+            finger = hand.fingers[i];
             HandleBone(finger.bones[j])
         }
 

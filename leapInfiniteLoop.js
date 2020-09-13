@@ -1,16 +1,28 @@
 var controllerOptions = {};
 
 var i = 0;
-var x = 0;
-var y = 0;
-var z = 0;
+var x = {};
+var y = {};
+var z = {};
+var rawXMin = 1000;
+var rawXMax = 1;
+var rawYMin = 1000;
+var rawYMax = 1;
 
 
 Leap.loop(controllerOptions, function(frame)
 {
     clear();
     HandleFrame(frame);
-    circle(x + ((window.innerWidth) / 2), (z * (-1)) + (( window.innerHeight)  /2) , 50);
+    
+    z = -z + (window.innerHeight);
+    oldXRange = (rawXMax - rawXMin);
+    oldYRange = (rawYMax - rawYMin);
+    newXValue = (((x - rawXMin) * window.innerWidth) / oldXRange) + 0;
+    newYValue = (((z - rawYMin) * window.innerHeight) / oldYRange) + 0;
+    
+    //circle(x + ((window.innerWidth) / 2), (z * (-1)) + (( window.innerHeight)  /2) , 50);
+    circle(newXValue,newYValue,50);
     //console.log(frame);
     //var z = (Math.floor(Math.random()* 7)) -1; //1 was too small to see a change - used 7
    // var j = (Math.floor(Math.random()* 7)) -1; //1 was too small to see a change - used 7
@@ -40,6 +52,24 @@ function HandleHand(hand){
 
 function HandleFinger(finger){
     if (finger.type == 1){
+        if ( x < rawXMin){
+            rawXMin = x;
+            console.log(rawXMin);
+        }
+
+        if (x > rawXMax){
+            rawXMax = x;
+            console.log(rawXMax);
+        }
+
+        if (z < rawYMin){
+            rawYMin = z;
+        }
+
+        if (z > rawYMax){
+            rawYMax = z;
+        }
+
         x = finger.tipPosition[0];
         z = finger.tipPosition[1];
         y = finger.tipPosition[2];

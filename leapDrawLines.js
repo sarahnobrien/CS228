@@ -10,6 +10,7 @@ var rawYMin = 1000;
 var rawYMax = 1;
 
 
+
 Leap.loop(controllerOptions, function(frame)
     {
         clear();
@@ -66,15 +67,26 @@ function HandleFinger(finger){
 }
 
 function HandleBone(bone){
+    oX = bone.prevJoint[0];
+    oZ = bone.prevJoint[1];
+    oY = bone.prevJoint[2];
+
     x = bone.nextJoint[0];
     z = bone.nextJoint[1];
     y = bone.nextJoint[2];
 
+    oZ = -oZ + (window.innerHeight);
     z = -z + (window.innerHeight);
+
     oldXRange = (rawXMax - rawXMin);
     oldYRange = (rawYMax - rawYMin);
     newXValue = (((x - rawXMin) * window.innerWidth) / oldXRange) + 0;
     newYValue = (((z - rawYMin) * window.innerHeight) / oldYRange) + 0;
-    circle(newXValue,newYValue,50);
-    console.log(bone)
+
+    newOXValue = (((oX - rawXMin) * window.innerWidth) / oldXRange) + 0;
+    newOYValue = (((oZ - rawYMin) * window.innerHeight) / oldYRange) + 0;
+
+    //circle(newXValue,newYValue,50);
+    line(newXValue,newYValue, newOXValue, newOYValue);
+    console.log(bone);
 }

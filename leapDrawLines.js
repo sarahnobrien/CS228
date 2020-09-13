@@ -31,7 +31,11 @@ function HandleFrame (frame){
 function HandleHand(hand){
     for (var i = 0; i < hand.fingers.length; i++){
         finger = hand.fingers[i];
-        HandleFinger(finger)
+        //HandleFinger(finger)
+        for (var j = 0; j < finger.bones.length; j++){
+            HandleBone(finger.bones[j])
+        }
+
     }
 }
 
@@ -85,7 +89,7 @@ function HandleBone(bone){
         line(xt,zt,xb,zb);
     }
 
-    else if (bone.type == 4){
+    else if (bone.type == 3){
         strokeWeight(2);
         stroke('rgb(105,105,105)');
         line(xt,zt,xb,zb);

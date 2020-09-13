@@ -56,14 +56,6 @@ function HandleFinger(finger){
         x = finger.tipPosition[0];
         z = finger.tipPosition[1];
         y = finger.tipPosition[2];
-        //console.log(finger);
-
-    z = -z + (window.innerHeight);
-    oldXRange = (rawXMax - rawXMin);
-    oldYRange = (rawYMax - rawYMin);
-    newXValue = (((x - rawXMin) * window.innerWidth) / oldXRange) + 0;
-    newYValue = (((z - rawYMin) * window.innerHeight) / oldYRange) + 0;
-    //circle(newXValue,newYValue,50);
 
     for (var i = 0; i < finger.bones.length; i++){
         bone = finger.bones[i];
@@ -78,5 +70,11 @@ function HandleBone(bone){
     z = bone.nextJoint[1];
     y = bone.nextJoint[2];
 
+    z = -z + (window.innerHeight);
+    oldXRange = (rawXMax - rawXMin);
+    oldYRange = (rawYMax - rawYMin);
+    newXValue = (((x - rawXMin) * window.innerWidth) / oldXRange) + 0;
+    newYValue = (((z - rawYMin) * window.innerHeight) / oldYRange) + 0;
+    circle(newXValue,newYValue,50);
     console.log(bone)
 }

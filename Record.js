@@ -12,18 +12,18 @@ var rawYMax = 1;
 var previousNumHands = 0;
 var currentNumHands = 0;
 
-var OneFrameOfData = nj.zeros([5,4]);
+var OneFrameOfData = nj.zeros([5,4,6]);
 
 Leap.loop(controllerOptions, function(frame)
     {
-        console.log(OneFrameOfData.toString())
+
 
         currentNumHands = frame.hands.length;
-        console.log(previousNumHands);
-        console.log(currentNumHands);
+        //console.log(previousNumHands);
+        //console.log(currentNumHands);
         clear();
         HandleFrame(frame);
-        if (previousNumHands == 2 && currentNumHands == 1){
+        if (currentNumHands == 1 && previousNumHands == 2){
             RecordData();
         }
         previousNumHands = currentNumHands;
@@ -32,8 +32,7 @@ Leap.loop(controllerOptions, function(frame)
 );
 
 function HandleFrame (frame){
-    var hand;
-    if (frame.hands.length == 1 || frame.hands.length == 2){
+    if (frame.hands.length >= 1 ){
         var hand = frame.hands[0];
         var fingers = hand.fingers;
         HandleHand(hand, frame)
@@ -46,7 +45,7 @@ function HandleHand(hand, frame){
 
         for (var i = 0; i < hand.fingers.length; i++){
             finger = hand.fingers[i];
-            HandleBone(finger.bones[j], frame, i)
+            HandleBone(finger.bones[j], frame, i, j)
         }
 
     }
@@ -67,7 +66,7 @@ function HandleFinger(finger, frame){
 
 }
 
-function HandleBone(bone,frame,fingerIndex){
+function HandleBone(bone,frame,fingerIndex, boneIndex){
 
     xb = bone.prevJoint[0];
     zb = bone.prevJoint[1];
@@ -77,16 +76,19 @@ function HandleBone(bone,frame,fingerIndex){
     zt = bone.nextJoint[1];
     yt = bone.nextJoint[2];
 
-    sumFinger = xb + zb + yb + xt + zt + yt;
-    OneFrameOfData.set(fingerIndex, sumFinger);
-
-
     [xb,zb] = TransformCoordinates(xb,zb); // base
     [xt,zt] = TransformCoordinates(xt,zt); // tip
 
     zb = -zb + (window.innerHeight);
     zt = -zt + (window.innerHeight);
 
+    //sumFinger = xb + zb + yb + xt + zt + yt;
+    OneFrameOfData.set(fingerIndex, boneIndex, 0, xb);
+    OneFrameOfData.set(fingerIndex, boneIndex, 1, zb);
+    OneFrameOfData.set(fingerIndex, boneIndex, 2, yb);
+    OneFrameOfData.set(fingerIndex, boneIndex, 3, xt);
+    OneFrameOfData.set(fingerIndex, boneIndex, 4, zt);
+    OneFrameOfData.set(fingerIndex, boneIndex, 5, yt);
 
 
     if (frame.hands.length == 1) {
@@ -164,4 +166,5 @@ function TransformCoordinates(x,z){
 
 function RecordData(){
     background(51);
+    console.log(OneFrameOfData.toString())
 }

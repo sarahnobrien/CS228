@@ -1,125 +1,96 @@
-var controllerOptions = {};
+var anotherFrameOfData = nj.array([[[ 674.96526, 581.49647,   143.075, 674.96526, 581.49647,   143.075],
+    [ 674.96526, 581.49647,   143.075,  582.7481, 531.38073,   130.063],
+    [  582.7481, 531.38073,   130.063, 519.17134, 496.37097,   122.082],
+    [ 519.17134, 496.37097,   122.082, 474.93698, 471.42524,   117.787]],
+    [[ 699.95396, 538.38155,   137.886, 627.65974, 496.56118,   89.3575],
+        [ 627.65974, 496.56118,   89.3575, 570.45886, 483.30335,   63.2131],
+        [ 570.45886, 483.30335,   63.2131, 537.26357, 482.96267,   48.5303],
+        [ 537.26357, 482.96267,   48.5303, 513.54576, 486.56812,   38.2959]],
+    [[ 724.04772,  538.6257,   133.197,  674.6372, 502.76141,   84.0654],
+        [  674.6372, 502.76141,   84.0654, 641.58868, 505.49247,   48.9108],
+        [ 641.58868, 505.49247,   48.9108, 618.67464, 516.51038,   28.9434],
+        [ 618.67464, 516.51038,   28.9434, 602.12624, 528.26074,   16.3568]],
+    [[ 747.89587, 545.70316,   129.107, 723.28175, 518.37556,   82.8587],
+        [ 723.28175, 518.37556,   82.8587, 710.06194, 504.15249,    49.308],
+        [ 710.06194, 504.15249,    49.308, 696.84064, 504.56982,    28.573],
+        [ 696.84064, 504.56982,    28.573, 685.41985,  509.7963,   14.9227]],
+    [[  768.2891, 567.94055,   126.024, 764.49345, 542.62576,   82.5384],
+        [ 764.49345, 542.62576,   82.5384, 781.58607, 534.23102,   56.2532],
+        [ 781.58607, 534.23102,   56.2532, 787.19046, 534.19128,   41.3952],
+        [ 787.19046, 534.19128,   41.3952, 789.26512,  537.4958,   28.2645]]]);
 
-var i = 0;
-var x = 0;
-var y = 0;
-var z = 0;
-var rawXMin = 1000;
-var rawXMax = 1;
-var rawYMin = 1000;
-var rawYMax = 1;
+var oneFrameOfData = nj.array([[[ 204.14932,  397.5455,   114.362, 204.14932,  397.5455,   114.362],
+    [ 204.14932,  397.5455,   114.362, 268.16705, 409.32491,   88.5173],
+    [ 268.16705, 409.32491,   88.5173, 304.28003, 419.86145,   67.1826],
+    [ 304.28003, 419.86145,   67.1826, 326.79711, 427.68269,   51.7081]],
+    [[ 192.61357, 372.60527,   107.297, 261.96293, 357.55094,    56.045],
+        [ 261.96293, 357.55094,    56.045, 297.79797, 383.34963,   30.0513],
+        [ 297.79797, 383.34963,   30.0513, 296.92363, 411.73594,   32.0041],
+        [ 296.92363, 411.73594,   32.0041, 286.17925, 426.03912,   40.7993]],
+    [[ 176.52709, 370.96985,   100.881,  228.9281, 357.30236,   47.8753],
+        [  228.9281, 357.30236,   47.8753, 270.94636, 383.19207,   17.8772],
+        [ 270.94636, 383.19207,   17.8772, 279.62411,  415.8965,   20.9573],
+        [ 279.62411,  415.8965,   20.9573, 274.15725, 432.29286,   31.5612]],
+    [[ 159.66292, 372.99783,   95.1583, 192.53573,  361.8351,   44.2353],
+        [ 192.53573,  361.8351,   44.2353, 229.72858, 384.07634,   15.0061],
+        [ 229.72858, 384.07634,   15.0061, 241.86943, 415.17115,   18.7558],
+        [ 241.86943, 415.17115,   18.7558, 239.84412, 431.11383,   29.9131]],
+    [[ 143.24513, 383.39582,   90.7469, 160.23442, 371.56208,   41.9529],
+        [ 160.23442, 371.56208,   41.9529, 173.58833, 391.36783,   15.8523],
+        [ 173.58833, 391.36783,   15.8523, 190.15593, 410.85982,   18.4158],
+        [ 190.15593, 410.85982,   18.4158, 200.24755, 421.25509,    30.135]]]);
 
+var frameIndex = 0;
+var frameSwitch = 0;
 
-
-Leap.loop(controllerOptions, function(frame)
+function draw()
+{
+    if (frameIndex == 100)
     {
-        clear();
-        HandleFrame(frame);
-    }
-);
+        frameIndex = 0;
 
-function HandleFrame (frame){
-    var hand;
-    if (frame.hands.length == 1 ){
-        var hand = frame.hands[0];
-        var fingers = hand.fingers;
-        HandleHand(hand)
-    }
+        if (frameSwitch == 0){
 
-}
-
-function HandleHand(hand){
-    for (var j = 3; j >= 0; j--){
-
-        for (var i = 0; i < hand.fingers.length; i++){
-            finger = hand.fingers[i];
-            HandleBone(finger.bones[j])
+            frameSwitch = 1;
+        }
+        else if (frameSwitch == 1) {
+            frameSwitch = 0;
         }
 
     }
+    clear();
+    for (var fingerIndex = 0; fingerIndex <= 4; fingerIndex++)
+    {
+        for (var boneIndex = 0; boneIndex <= 3; boneIndex++) {
+            var xStart = oneFrameOfData.get(fingerIndex, boneIndex, 0);
+            var zStart = oneFrameOfData.get(fingerIndex, boneIndex, 1);
+            var yStart = oneFrameOfData.get(fingerIndex, boneIndex, 2);
+            var xEnd = oneFrameOfData.get(fingerIndex, boneIndex, 3);
+            var zEnd = oneFrameOfData.get(fingerIndex, boneIndex, 4);
+            var yEnd = oneFrameOfData.get(fingerIndex, boneIndex, 5);
+
+            var xStart2 = anotherFrameOfData.get(fingerIndex, boneIndex, 0);
+            var zStart2 = anotherFrameOfData.get(fingerIndex, boneIndex, 1);
+            var yStart2 = anotherFrameOfData.get(fingerIndex, boneIndex, 2);
+            var xEnd2 = anotherFrameOfData.get(fingerIndex, boneIndex, 3);
+            var zEnd2 = anotherFrameOfData.get(fingerIndex, boneIndex, 4);
+            var yEnd2 = anotherFrameOfData.get(fingerIndex, boneIndex, 5);
+
+            if (frameSwitch % 2 == 0) {
+                line(xStart, zStart, xEnd, zEnd);
+            }
+            else {
+                line(xStart2, zStart2, xEnd2, zEnd2);
+            }
+
+            //console.log(xStart, zStart, yStart, xEnd, zEnd, yEnd);
+
+        }
+    }
+    console.log(frameSwitch)
+    frameIndex++;
+
 }
 
-function HandleFinger(finger){
-/**
 
-        x = finger.tipPosition[0];
-        z = finger.tipPosition[1];
-        y = finger.tipPosition[2];
-**/
-    for (var i = 0; i < finger.bones.length; i++){
-        bone = finger.bones[i];
-        HandleBone(bone)
-    }
-
-
-}
-
-function HandleBone(bone){
-    xb = bone.prevJoint[0];
-    zb = bone.prevJoint[1];
-    yb = bone.prevJoint[2];
-
-    xt = bone.nextJoint[0];
-    zt = bone.nextJoint[1];
-    yt = bone.nextJoint[2];
-
-
-
-
-    [xb,zb] = TransformCoordinates(xb,zb); // base
-    [xt,zt] = TransformCoordinates(xt,zt); // tip
-
-    zb = -zb + (window.innerHeight);
-    zt = -zt + (window.innerHeight);
-
-    if (bone.type == 0) {
-        strokeWeight(10);
-        stroke('rgb(220,220,220)');
-        line(xt,zt,xb,zb);
-    }
-
-    if (bone.type == 1){
-        strokeWeight(7);
-        stroke('rgb(192,192,192)');
-        line(xt,zt,xb,zb);
-    }
-    if (bone.type == 2){
-        strokeWeight(4);
-        stroke('rgb(128,128,128)');
-        line(xt,zt,xb,zb);
-    }
-
-    else if (bone.type == 3){
-        strokeWeight(2);
-        stroke('rgb(105,105,105)');
-        line(xt,zt,xb,zb);
-    }
-
-
-
-    //console.log(bone);
-}
-
-function TransformCoordinates(x,z){
-    if ( x < rawXMin){
-        rawXMin = x;
-        //console.log(rawXMin);
-    }
-    if (x > rawXMax){
-        rawXMax = x;
-        //console.log(rawXMax);
-    }
-    if (z < rawYMin){
-        rawYMin = z;
-    }
-    if (z > rawYMax){
-        rawYMax = z;
-    }
-
-    oldXRange = (rawXMax - rawXMin);
-    oldYRange = (rawYMax - rawYMin);
-
-    newXValue = (((x - rawXMin) * window.innerWidth) / oldXRange) + 0;
-    newYValue = (((z - rawYMin) * window.innerHeight) / oldYRange) + 0;
-    return[newXValue,newYValue]
-}
+//draw();

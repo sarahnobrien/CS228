@@ -1,5 +1,6 @@
 const knnClassifier = ml5.KNNClassifier();
 
+
 var irisData = nj.array([[	5.1 ,	3.5	,	1.4	,	0.2	],
     [	4.9	,	3	,	1.4	,	0.2	],
     [	4.7	,	3.2	,	1.3	,	0.2	],
@@ -156,22 +157,26 @@ var numSamples = irisData.shape[0];
 var numFeatures = (irisData.shape[1]) - 1;
 var testingSampleIndex = 1;
 
+var predictedClassLabels = nj.zeros([numSamples]);
+
 function GotResults(err, result){
-    console.log(testingSampleIndex,parseInt(result.label));
+    predictedClassLabels[testingSampleIndex] = parseInt(result.label);
     testingSampleIndex +=2 ;
     if (testingSampleIndex > numSamples){
         testingSampleIndex = 1;
     }
+
+
+
+
 }
 function Train(){
-    //should be odd
-    for (i = 1; i < numSamples + 1; i+=2){
+    //should be odd?
+    for (i = 0; i < numSamples + 1; i+=2){
         var currentFeatures = irisData.pick(i).slice([0,4]);
         var currentLabel = irisData.get(i, -1);
         knnClassifier.addExample(currentFeatures.tolist(), currentLabel);
         var predictedLabel = knnClassifier.classify(currentFeatures.tolist(), GotResults);
-        //console.log(i, irisData.pick(i).slice([0,5]).toString() , currentFeatures.toString(), currentLabel);
-        //console.log(i, currentFeatures.toString(), currentLabel, predictedLabel);
     }
     trainingCompleted = true;
 
@@ -181,10 +186,47 @@ function Test(){
     var currentFeatures = irisData.pick(testingSampleIndex).slice([0,4]);
     var currentLabel = irisData.get(testingSampleIndex, -1);
     var predictedLabel = knnClassifier.classify(currentFeatures.tolist(), GotResults);
-    //console.log(j, irisData.pick(j).slice([0,5]).toString());
 
-    //console.log(testingSampleIndex,currentFeatures.toString(), currentLabel)
 
+}
+
+function DrawCircles(){
+    for (i = 0; i < numSamples; i++){
+        x = irisData.get(i, 0);
+        y = irisData.get(i, 1);
+        c = irisData.get(i, -1);
+        c = parseInt(c);
+
+        if (i % 2 == 0){
+            stroke(51);
+        }
+        else {
+            if (predictedClassLabels[i] === 0){
+                stroke('red');
+            }
+            else if (predictedClassLabels[i] === 1){
+                stroke('blue');
+            }
+            else if (predictedClassLabels[i] === 2){
+                stroke('rgb(0,255,0)');
+            }
+        }
+
+
+
+        if (c == 0 ){
+            fill('red');
+        }
+        else if (c == 1) {
+               fill('blue');
+        }
+
+        else if (c == 2) {
+            fill('rgb(0,255,0)');
+            }
+
+        circle(x * 100,y * 100,7);
+    }
 
 }
 
@@ -197,6 +239,7 @@ function draw() {
     }
 
     Test();
+    DrawCircles();
 
 }
 

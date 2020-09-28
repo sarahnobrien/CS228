@@ -149,33 +149,54 @@ var irisData = nj.array([[	5.1 ,	3.5	,	1.4	,	0.2	],
     [	6.3	,	2.5	,	5	,	1.9	],
     [	6.5	,	3	,	5.2	,	2	],
     [	6.2	,	3.4	,	5.4	,	2.3	],
-    [	5.9	,	3	,	5.1	,	1.8	]])
+    [	5.9	,	3	,	5.1	,	1.8	]]);
 
 var trainingCompleted  = false;
 var numSamples = irisData.shape[0];
 var numFeatures = (irisData.shape[1]) - 1;
+var testingSampleIndex = 1;
 
+function GotResults(err, result){
+    console.log(testingSampleIndex,parseInt(result.label));
+    testingSampleIndex +=2 ;
+    if (testingSampleIndex > numSamples){
+        testingSampleIndex = 1;
+    }
+}
 function Train(){
-    for (i = 0; i < numSamples; i+=2){
+    //should be odd
+    for (i = 1; i < numSamples + 1; i+=2){
         var currentFeatures = irisData.pick(i).slice([0,4]);
-        var currentLabel = irisData.get(i, 4);
+        var currentLabel = irisData.get(i, -1);
         knnClassifier.addExample(currentFeatures.tolist(), currentLabel);
-        console.log(i, irisData.pick(i).slice([0,5]).toString() , currentFeatures.toString(), currentLabel);
-
+        var predictedLabel = knnClassifier.classify(currentFeatures.tolist(), GotResults);
+        //console.log(i, irisData.pick(i).slice([0,5]).toString() , currentFeatures.toString(), currentLabel);
+        //console.log(i, currentFeatures.toString(), currentLabel, predictedLabel);
     }
     trainingCompleted = true;
 
 }
 
 function Test(){
+    var currentFeatures = irisData.pick(testingSampleIndex).slice([0,4]);
+    var currentLabel = irisData.get(testingSampleIndex, -1);
+    var predictedLabel = knnClassifier.classify(currentFeatures.tolist(), GotResults);
+    //console.log(j, irisData.pick(j).slice([0,5]).toString());
+
+    //console.log(testingSampleIndex,currentFeatures.toString(), currentLabel)
+
+
 }
+
+
 
 function draw() {
     clear();
     if (trainingCompleted == false){
         Train();
     }
-    //Test();
+
+    Test();
 
 }
 

@@ -19,32 +19,37 @@ var anotherFrameOfData = nj.array([[[ 674.96526, 581.49647,   143.075, 674.96526
         [ 781.58607, 534.23102,   56.2532, 787.19046, 534.19128,   41.3952],
         [ 787.19046, 534.19128,   41.3952, 789.26512,  537.4958,   28.2645]]]);
 
-var oneFrameOfData = nj.array([[[ 204.14932,  397.5455,   114.362, 204.14932,  397.5455,   114.362],
-    [ 204.14932,  397.5455,   114.362, 268.16705, 409.32491,   88.5173],
-    [ 268.16705, 409.32491,   88.5173, 304.28003, 419.86145,   67.1826],
-    [ 304.28003, 419.86145,   67.1826, 326.79711, 427.68269,   51.7081]],
-    [[ 192.61357, 372.60527,   107.297, 261.96293, 357.55094,    56.045],
-        [ 261.96293, 357.55094,    56.045, 297.79797, 383.34963,   30.0513],
-        [ 297.79797, 383.34963,   30.0513, 296.92363, 411.73594,   32.0041],
-        [ 296.92363, 411.73594,   32.0041, 286.17925, 426.03912,   40.7993]],
-    [[ 176.52709, 370.96985,   100.881,  228.9281, 357.30236,   47.8753],
-        [  228.9281, 357.30236,   47.8753, 270.94636, 383.19207,   17.8772],
-        [ 270.94636, 383.19207,   17.8772, 279.62411,  415.8965,   20.9573],
-        [ 279.62411,  415.8965,   20.9573, 274.15725, 432.29286,   31.5612]],
-    [[ 159.66292, 372.99783,   95.1583, 192.53573,  361.8351,   44.2353],
-        [ 192.53573,  361.8351,   44.2353, 229.72858, 384.07634,   15.0061],
-        [ 229.72858, 384.07634,   15.0061, 241.86943, 415.17115,   18.7558],
-        [ 241.86943, 415.17115,   18.7558, 239.84412, 431.11383,   29.9131]],
-    [[ 143.24513, 383.39582,   90.7469, 160.23442, 371.56208,   41.9529],
-        [ 160.23442, 371.56208,   41.9529, 173.58833, 391.36783,   15.8523],
-        [ 173.58833, 391.36783,   15.8523, 190.15593, 410.85982,   18.4158],
-        [ 190.15593, 410.85982,   18.4158, 200.24755, 421.25509,    30.135]]]);
+var oneFrameOfData = nj.array([[[ 0.49286, 0.29253,       0, 0.49286, 0.29253,       0],
+    [ 0.49286, 0.29253,       0,  0.5198, 0.37561,       0],
+    [  0.5198, 0.37561,       0, 0.50805,  0.4146,       0],
+    [ 0.50805,  0.4146,       0, 0.48713, 0.43235,       0]],
+    [[  0.4448, 0.35982,       0, 0.51106, 0.54473,       0],
+        [ 0.51106, 0.54473,       0, 0.54241,   0.655,       0],
+        [ 0.54241,   0.655,       0, 0.56904, 0.68619,       0],
+        [ 0.56904, 0.68619,       0,    0.59, 0.69375,       0]],
+    [[ 0.40324, 0.36429,       0, 0.43397, 0.53667,       0],
+        [ 0.43397, 0.53667,       0, 0.42114, 0.67547,       0],
+        [ 0.42114, 0.67547,       0, 0.43137, 0.73134,       0],
+        [ 0.43137, 0.73134,       0, 0.44652, 0.75115,       0]],
+    [[ 0.36332, 0.35772,       0, 0.35882, 0.50567,       0],
+        [ 0.35882, 0.50567,       0, 0.38619, 0.51668,       0],
+        [ 0.38619, 0.51668,       0, 0.40597, 0.51875,       0],
+        [ 0.40597, 0.51875,       0, 0.42049, 0.51813,       0]],
+    [[ 0.33129, 0.32806,       0, 0.29695, 0.46209,       0],
+        [ 0.29695, 0.46209,       0, 0.34882, 0.48506,       0],
+        [ 0.34882, 0.48506,       0, 0.38192, 0.48925,       0],
+        [ 0.38192, 0.48925,       0, 0.41318, 0.48837,       0]]]);
 
 var frameIndex = 0;
 var frameSwitch = 0;
 
 function draw()
 {
+    var xStart;
+    var yStart;
+    var xEnd;
+    var yEnd;
+
     if (frameIndex == 100)
     {
         frameIndex = 0;
@@ -59,28 +64,23 @@ function draw()
 
     }
     clear();
+
+
+
     for (var fingerIndex = 0; fingerIndex <= 4; fingerIndex++)
     {
         for (var boneIndex = 0; boneIndex <= 3; boneIndex++) {
-            var xStart = oneFrameOfData.get(fingerIndex, boneIndex, 0);
-            var zStart = oneFrameOfData.get(fingerIndex, boneIndex, 1);
-            var yStart = oneFrameOfData.get(fingerIndex, boneIndex, 2);
-            var xEnd = oneFrameOfData.get(fingerIndex, boneIndex, 3);
-            var zEnd = oneFrameOfData.get(fingerIndex, boneIndex, 4);
-            var yEnd = oneFrameOfData.get(fingerIndex, boneIndex, 5);
+            xStart = window.innerWidth * oneFrameOfData.get(fingerIndex,boneIndex,0);
+            yStart = window.innerHeight *(1 - oneFrameOfData.get(fingerIndex,boneIndex,1));
+            xEnd = window.innerWidth * oneFrameOfData.get(fingerIndex,boneIndex,3)
+            yEnd =  window.innerHeight * (1 - oneFrameOfData.get(fingerIndex,boneIndex,4));
 
-            var xStart2 = anotherFrameOfData.get(fingerIndex, boneIndex, 0);
-            var zStart2 = anotherFrameOfData.get(fingerIndex, boneIndex, 1);
-            var yStart2 = anotherFrameOfData.get(fingerIndex, boneIndex, 2);
-            var xEnd2 = anotherFrameOfData.get(fingerIndex, boneIndex, 3);
-            var zEnd2 = anotherFrameOfData.get(fingerIndex, boneIndex, 4);
-            var yEnd2 = anotherFrameOfData.get(fingerIndex, boneIndex, 5);
 
             if (frameSwitch % 2 == 0) {
-                line(xStart, zStart, xEnd, zEnd);
+                line(xStart, yStart, xEnd, yEnd);
             }
             else {
-                line(xStart2, zStart2, xEnd2, zEnd2);
+               // line(xStart2, zStart2, xEnd2, zEnd2);
             }
 
             //console.log(xStart, zStart, yStart, xEnd, zEnd, yEnd);

@@ -1,18 +1,24 @@
 const knnClassifier = ml5.KNNClassifier();
 var controllerOptions = {}
 
-
 var numSamples = train2.shape[0];
 var predictedClassLabels = nj.zeros([numSamples]);
 var trainingCompleted  = false;
 var oneFrameOfData = nj.zeros([5,4,6]);
 
+var predictionObtained = 0;
+var meanPredictionAccuracy = 0;
 
 function GotResults(err, result){
     predictedClassLabels = parseInt(result.label);
 
 
-    console.log(parseInt(result.label));
+    //console.log(parseInt(result.label));
+
+    predictionObtained++;
+
+    meanPredictionAccuracy = (((predictionObtained - 1) * meanPredictionAccuracy) + (parseInt(result.label) == 2 )) / predictionObtained
+    //console.log(predictionObtained, meanPredictionAccuracy, parseInt(result.label) );
 
 }
 function Train(){
@@ -41,6 +47,7 @@ function Test(){
         var currentTestingSample = oneFrameOfData.pick(null, null, null, i);
         currentTestingSample = currentTestingSample.reshape(120).tolist();
         var predictedLabel = knnClassifier.classify(currentTestingSample, GotResults);
+
 
     }
 }
@@ -93,23 +100,23 @@ function HandleBone(bone,frame,fingerIndex, boneIndex, InteractionBox){
 
 
     if (bone.type == 0) {
-        strokeWeight(11);
+        strokeWeight(15);
         stroke('rgb(220,220,220)');
         line(xt, zt, xb, zb);
     }
 
     if (bone.type == 1) {
-        strokeWeight(8);
+        strokeWeight(12);
         stroke('rgb(192,192,192)');
         line(xt, zt, xb, zb);
     }
     if (bone.type == 2) {
-        strokeWeight(6);
+        strokeWeight(10);
         stroke('rgb(128,128,128)');
         line(xt, zt, xb, zb);
     }
     else if (bone.type == 3) {
-        strokeWeight(4);
+        strokeWeight(8);
         stroke('rgb(105,105,105)');
         line(xt, zt, xb, zb);
     }

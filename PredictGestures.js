@@ -13,12 +13,12 @@ function GotResults(err, result){
     predictedClassLabels = parseInt(result.label);
 
 
-    //console.log(parseInt(result.label));
+    console.log(parseInt(result.label));
 
     predictionObtained++;
 
-    meanPredictionAccuracy = (((predictionObtained - 1) * meanPredictionAccuracy) + (parseInt(result.label) == 2 )) / predictionObtained
-    console.log(predictionObtained, meanPredictionAccuracy, parseInt(result.label) );
+    meanPredictionAccuracy = (((predictionObtained - 1) * meanPredictionAccuracy) + (parseInt(result.label) == 9)) / predictionObtained
+    //console.log(predictionObtained, meanPredictionAccuracy, parseInt(result.label) );
 
 }
 function Train(){
@@ -29,10 +29,49 @@ function Train(){
         knnClassifier.addExample(features, 2);
         console.log(features);
 
-
         features = train4.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 4);
+        console.log(features);
+
+        features = train3.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 3);
+        console.log(features);
+
+        features = train6.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 6);
+        console.log(features);
+
+        features = train5.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 5);
+        console.log(features);
+
+        features = train0.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 0);
+        console.log(features);
+
+        features = train7.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 7);
+        console.log(features);
+
+        features = train1.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 1);
+        console.log(features);
+
+        features = train8.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 8);
+        console.log(features);
+
+        features = train9.pick(null,null,null,i);
+        features = features.reshape(120).tolist();
+        knnClassifier.addExample(features, 9);
         console.log(features);
 
     }

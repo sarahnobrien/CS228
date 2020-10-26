@@ -40,15 +40,6 @@ function Train(){
         knnClassifier.addExample(features, 0);
         console.log(features);
 
-        // features = train0ReckordGroten.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 0);
-        // console.log(features);
-
-        // features = train0Bongard.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 0);
-        // console.log(features);
 
         // Digit 1
         features = train1.pick(null,null,null,i);
@@ -65,32 +56,12 @@ function Train(){
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 1);
         console.log(features);
-        //
-        // features = train1Rice.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 1);
-        // console.log(features);
-        //
-        // features = train1McLaughlin.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 1);
-        // console.log(features);
-        //
-        // features = train1Li.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 1);
-        // console.log(features);
 
         features = train1Bongard.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 1);
         console.log(features);
 
-        // features = train1Jimmo.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 1);
-        // console.log(features);
-        //
         features = train1Wolley.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 1);
@@ -99,15 +70,6 @@ function Train(){
         //do more 1 examples please
 
         //Digit 2
-        // features = train2.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 2);
-        // console.log(features);
-
-        // features = train2Bongard.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 2);
-        // console.log(features);
 
         features = train2Sheboy.pick(null,null,null,i);
         features = features.reshape(120).tolist();
@@ -126,16 +88,11 @@ function Train(){
 
         //Digit 3
 
-        // features = train3.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 3);
-        // console.log(features);
-        // //
         features = train3Shi.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 3);
         console.log(features);
-        // //
+
         features = train3Downs.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 3);
@@ -151,17 +108,13 @@ function Train(){
         knnClassifier.addExample(features, 3);
         console.log(features);
 
-        // features = train3Jing.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 3);
-        // console.log(features);
 
         features = train3Li.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 3);
         console.log(features);
 
-        //
+
         features = train3Riofrio.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 3);
@@ -185,12 +138,12 @@ function Train(){
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 4);
         console.log(features);
-        //
+
         features = train4Beattie.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 4);
         console.log(features);
-        //
+
         features = train4Bertschinger.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 4);
@@ -202,11 +155,6 @@ function Train(){
         console.log(features);
 
 
-        // features = train4Bongard.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 4);
-        // console.log(features);
-
         features = train4Liu.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 4);
@@ -217,41 +165,11 @@ function Train(){
         knnClassifier.addExample(features, 4);
         console.log(features);
 
-        // features = train4Sheboy.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 4);
-        // console.log(features);
-
-        //Digit 5
-        // features = train5.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 5);
-        // console.log(features);
-
-        // features = train5Bongard.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 5);
-        // console.log(features);
-
-        // features = train5Koretsky.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 5);
-        // console.log(features);
-        //
         features = train5Bertschinger.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 5);
         console.log(features);
-        //
-        // features = train5Fekert.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 5);
-        // console.log(features);
-        // //
-        // features = train5Kiely.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 5);
-        // console.log(features);
+
 
 
         //Digit 6
@@ -282,10 +200,6 @@ function Train(){
 
 
         //Digit 7
-        // features = train7.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 7);
-        // console.log(features);
 
         features = train7Bongard.pick(null,null,null,i);
         features = features.reshape(120).tolist();
@@ -306,11 +220,6 @@ function Train(){
         knnClassifier.addExample(features, 8);
         console.log(features);
 
-        // features = train8Bongard.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 8);
-        // console.log(features);
-
         features = train8Timsina.pick(null,null,null,i);
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 8);
@@ -321,16 +230,6 @@ function Train(){
         features = features.reshape(120).tolist();
         knnClassifier.addExample(features, 9);
         console.log(features);
-
-        // features = train9McLaughlin.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 9);
-        // console.log(features);
-        //
-        // features = train9ILee.pick(null,null,null,i);
-        // features = features.reshape(120).tolist();
-        // knnClassifier.addExample(features, 9);
-        // console.log(features);
 
     }
     console.log("Training complete!");
@@ -356,7 +255,7 @@ function HandleFrame (frame){
         var hand = frame.hands[0];
         var fingers = hand.fingers;
         //console.log(oneFrameOfData.toString())
-        Test();
+        //Test();
         HandleHand(hand, frame, InteractionBox)
     }
 
@@ -384,11 +283,11 @@ function HandleBone(bone,frame,fingerIndex, boneIndex, InteractionBox){
     oneFrameOfData.set(fingerIndex, boneIndex, 4, normalizedNextJoint[1]);
     oneFrameOfData.set(fingerIndex, boneIndex, 5, 1);
 
-    var canvasPrevX = window.innerWidth * normalizedPrevJoint[0];
-    var canvasPrevY = window.innerHeight * (1 - normalizedPrevJoint[1]);
+    var canvasPrevX = (window.innerWidth / 2) * normalizedPrevJoint[0];
+    var canvasPrevY = (window.innerHeight / 2) * (1 - normalizedPrevJoint[1]);
 
-    var canvasNextX = window.innerWidth * normalizedNextJoint[0];
-    var canvasNextY = window.innerHeight * (1 - normalizedNextJoint[1]);
+    var canvasNextX = (window.innerWidth / 2) * normalizedNextJoint[0];
+    var canvasNextY = (window.innerHeight / 2) * (1 - normalizedNextJoint[1]);
 
     xb = canvasPrevX;
     zb = canvasPrevY;
@@ -502,9 +401,9 @@ function CenterData(){
 
 Leap.loop(controllerOptions, function(frame) {
     clear();
-    if (trainingCompleted == false) {
-        Train();
-    }
+    // if (trainingCompleted == false) {
+    //     Train();
+    // }
     HandleFrame(frame);
 
 });

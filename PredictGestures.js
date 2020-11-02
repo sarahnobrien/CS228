@@ -9,6 +9,8 @@ var oneFrameOfData = nj.zeros([5,4,6]);
 var predictionObtained = 0;
 var meanPredictionAccuracy = 0;
 
+var programState = 0;
+
 function GotResults(err, result){
     predictedClassLabels = parseInt(result.label);
 
@@ -244,8 +246,6 @@ function Test(){
         CenterData()
         currentTestingSample = currentTestingSample.reshape(120).tolist();
         var predictedLabel = knnClassifier.classify(currentTestingSample, GotResults);
-
-
     }
 }
 
@@ -278,10 +278,10 @@ function HandleBone(bone,frame,fingerIndex, boneIndex, InteractionBox){
 
     oneFrameOfData.set(fingerIndex, boneIndex, 0, normalizedPrevJoint[0]);
     oneFrameOfData.set(fingerIndex, boneIndex, 1, normalizedPrevJoint[1]);
-    oneFrameOfData.set(fingerIndex, boneIndex, 2, 1);
+    oneFrameOfData.set(fingerIndex, boneIndex, 2, normalizedPrevJoint[2]);
     oneFrameOfData.set(fingerIndex, boneIndex, 3, normalizedNextJoint[0]);
     oneFrameOfData.set(fingerIndex, boneIndex, 4, normalizedNextJoint[1]);
-    oneFrameOfData.set(fingerIndex, boneIndex, 5, 1);
+    oneFrameOfData.set(fingerIndex, boneIndex, 5, normalizedPrevJoint[2]);
 
     var canvasPrevX = (window.innerWidth / 2) * normalizedPrevJoint[0];
     var canvasPrevY = (window.innerHeight / 2) * (1 - normalizedPrevJoint[1]);
@@ -370,7 +370,7 @@ function CenterYData(){
 
 function CenterZData(){
     zValues = oneFrameOfData.slice([],[],[2,6,3]);
-    currentZMean = zValues.mean()
+    currentZMean = zValues.mean();
     zShift = 0.5 - currentZMean;
     for (var currentRow = 0; currentRow < zValues.shape[0]; currentRow++ ){
         for(var currentColumn = 0; currentColumn < zValues.shape[1]; currentColumn++){
@@ -398,13 +398,149 @@ function CenterData(){
 
 }
 
+function DetermineState(frame){
+    //console.log(programState)
+    if (frame.hands.length == 0){
+        programState = 0;
+    }
+    else if (HandIsUncentered()){
+        programState = 1;
+    }
+    else {
+        programState = 2;
+    }
+}
 
-Leap.loop(controllerOptions, function(frame) {
-    clear();
+function HandleState0(frame){
+    TrainKNNIfNotDoneYet();
+    DrawImageToHelpUserPutTheirHandOverTheDevice();
+}
+
+function HandleState1(frame){
+    HandleFrame(frame);
+
+    if (HandIsTooFarToTheLeft()){
+        DrawArrowRight();
+    }
+    else if (HandIsTooFarToTheRight()){
+        DrawArrowLeft();
+    }
+    else if (HandIsTooFarUp()){
+        DrawArrowDown();
+    }
+    else if (HandIsTooFarDown()){
+        DrawArrowUp();
+    }
+    else if(HandIsTooClose()){
+        DrawArrowAway();
+    }
+    else if(HandIsTooFar()){
+        DrawArrowTowards();
+    }
+
+}
+
+function HandleState2(frame){
+    HandleFrame(frame);
+    //Test();
+}
+
+function HandIsUncentered(frame){
+
+    return HandIsTooFarToTheLeft() || HandIsTooFarToTheRight() || HandIsTooFarUp() || HandIsTooFarDown() || HandIsTooClose() || HandIsTooFar();
+
+}
+
+function HandIsTooFarToTheLeft(){
+    xValues = oneFrameOfData.slice([],[],[0,6,3]);
+    currentXMean = xValues.mean();
+
+    return (currentXMean < 0.25);
+}
+
+function DrawArrowRight(){
+    image(imgTooLeft,window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight / 2);
+}
+
+function HandIsTooFarToTheRight(){
+    xValues = oneFrameOfData.slice([],[],[0,6,3]);
+    currentXMean = xValues.mean();
+
+    return (currentXMean > 0.75);
+}
+
+function DrawArrowLeft(){
+    image(imgTooRight,window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight / 2);
+}
+
+function HandIsTooFarUp(){
+    yValues = oneFrameOfData.slice([],[],[1,6,3]);
+    currentYMean = yValues.mean();
+
+    return (currentYMean > 0.75);
+}
+
+function DrawArrowDown(){
+    image(imgTooHigh,window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight / 2);
+}
+
+function HandIsTooFarDown(){
+    yValues = oneFrameOfData.slice([],[],[1,6,3]);
+    currentYMean = yValues.mean();
+
+    return (currentYMean < 0.25);
+}
+
+function DrawArrowUp(){
+    image(imgTooLow,window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight / 2);
+}
+
+function HandIsTooClose(){
+    zValues = oneFrameOfData.slice([],[],[2,6,3]);
+    currentZMean = zValues.mean();
+
+    return (currentZMean > 0.75);
+}
+
+function DrawArrowAway(){
+    image(imgTooClose,window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight / 2);
+}
+
+function HandIsTooFar(){
+    zValues = oneFrameOfData.slice([],[],[2,6,3]);
+    currentZMean = zValues.mean();
+
+    return (currentZMean < 0.25);
+}
+
+function DrawArrowTowards(){
+    image(imgTooFar,window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight / 2);
+}
+
+function TrainKNNIfNotDoneYet(){
     // if (trainingCompleted == false) {
     //     Train();
     // }
-    HandleFrame(frame);
+}
+
+function DrawImageToHelpUserPutTheirHandOverTheDevice(){
+    image(img,0,0, window.innerWidth / 2, window.innerHeight / 2);
+}
+
+
+Leap.loop(controllerOptions, function(frame) {
+    clear();
+    DetermineState(frame);
+
+    if (programState==0){
+        HandleState0(frame);
+    }
+    else if (programState==1){
+        HandleState1(frame);
+    }
+    else if (programState==2){
+        HandleState2(frame);
+    }
 
 });
 

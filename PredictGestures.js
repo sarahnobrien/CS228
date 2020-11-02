@@ -527,6 +527,12 @@ function DrawImageToHelpUserPutTheirHandOverTheDevice(){
     image(img,0,0, window.innerWidth / 2, window.innerHeight / 2);
 }
 
+function SignIn(){
+    //console.log("hey this function was just called!")
+    username = document.getElementById("username").value;
+    console.log(username)
+}
+
 
 Leap.loop(controllerOptions, function(frame) {
     clear();

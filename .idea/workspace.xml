@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="650bea1a-a8a2-4b8d-bc39-e52f58f4fa27" name="Default Changelist" comment="" />
+    <list default="true" id="650bea1a-a8a2-4b8d-bc39-e52f58f4fa27" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PredictGestures.html" beforeDir="false" afterPath="$PROJECT_DIR$/PredictGestures.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PredictGestures.js" beforeDir="false" afterPath="$PROJECT_DIR$/PredictGestures.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +69,7 @@
       <workItem from="1603318010419" duration="378000" />
       <workItem from="1603406157926" duration="14059000" />
       <workItem from="1603741637098" duration="11013000" />
-      <workItem from="1604342823886" duration="1648000" />
+      <workItem from="1604342823886" duration="5410000" />
     </task>
     <task id="LOCAL-00001" summary="Up to step 6 - drawing with each finger">
       <created>1600024500229</created>
@@ -347,10 +351,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900/1440.-387.1920.1080@0.0.1440.900" timestamp="1603656066747" />
-    <state x="595" y="201" key="Vcs.Push.Dialog.v2" timestamp="1604350519225">
+    <state x="595" y="201" key="Vcs.Push.Dialog.v2" timestamp="1604354697551">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="595" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604350519225" />
+    <state x="595" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604354697551" />
     <state x="2233" y="-149" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@1440.-364.1920.1057" timestamp="1602564210266" />
     <state x="494" y="44" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603743330813" />
     <state x="190" y="162" width="994" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604350525831">

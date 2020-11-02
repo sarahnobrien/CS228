@@ -533,12 +533,30 @@ function SignIn(){
     username = document.getElementById("username").value;
     //console.log(username)
     var list = document.getElementById('users');
-    var item = document.createElement('li');
-    item.innerHTML = String(username);
-    list.appendChild(item);
+    if (IsNewUser(username,list)) {
+        var item = document.createElement('li');
+        item.innerHTML = String(username);
+        list.appendChild(item);
+    }
     console.log(list.innerHTML);
-
     return false;
+
+}
+
+function IsNewUser(username,list){
+    var usernameFound = false;
+    var users = list.children;
+    for (i = 0; i < users.length; i++)
+    {
+        if (users[i].innerHTML === username)
+        {
+            usernameFound = true;
+            console.log(users[i]);
+            console.log(users[i].innerHTML);
+        }
+    }
+    return usernameFound == false;
+
 
 }
 

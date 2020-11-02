@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="650bea1a-a8a2-4b8d-bc39-e52f58f4fa27" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hT4tmgW9X82SgPrbY1H8uQnXdU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="650bea1a-a8a2-4b8d-bc39-e52f58f4fa27" name="Default Changelist" comment="" />
+      <created>1600021965679</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600021965679</updated>
+      <workItem from="1600021967124" duration="12107000" />
+      <workItem from="1600125148142" duration="492000" />
+      <workItem from="1600625913137" duration="7027000" />
+      <workItem from="1600634097419" duration="13000" />
+      <workItem from="1600642624226" duration="21000" />
+      <workItem from="1601249586732" duration="25643000" />
+      <workItem from="1601904270462" duration="905000" />
+      <workItem from="1601905309765" duration="6000" />
+      <workItem from="1601953431700" duration="446000" />
+      <workItem from="1602435394317" duration="2741000" />
+      <workItem from="1602445352112" duration="5206000" />
+      <workItem from="1602451550748" duration="221000" />
+      <workItem from="1602452620063" duration="17710000" />
+      <workItem from="1603318010419" duration="378000" />
+      <workItem from="1603406157926" duration="14059000" />
+      <workItem from="1603741637098" duration="11013000" />
+      <workItem from="1604342823886" duration="1356000" />
+    </task>
+    <task id="LOCAL-00001" summary="Up to step 6 - drawing with each finger">
+      <created>1600024500229</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600024500229</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Step 12 - handlebone">
+      <created>1600026518905</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600026518905</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Up to step 16 - bones in hand">
+      <created>1600026913371</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600026913371</updated>
+    </task>
+    <task id="LOCAL-00004" summary="up to 19 - lines">
+      <created>1600028093486</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600028093486</updated>
+    </task>
+    <task id="LOCAL-00005" summary="up to 25 - lightening lines">
+      <created>1600031577872</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600031577872</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fin">
+      <created>1600033169163</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600033169163</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fin-actual">
+      <created>1600034919332</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600034919332</updated>
+    </task>
+    <task id="LOCAL-00008" summary="New file record.html">
+      <created>1600626004617</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600626004617</updated>
+    </task>
+    <task id="LOCAL-00009" summary="New file record.js">
+      <created>1600626203800</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600626203800</updated>
+    </task>
+    <task id="LOCAL-00010" summary="New files playback .js and .html. updated Record.html">
+      <created>1600626550916</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1600626550916</updated>
+    </task>
+    <task id="LOCAL-00011" summary="up to step 23">
+      <created>1600631737190</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1600631737190</updated>
+    </task>
+    <task id="LOCAL-00012" summary="end of recording section - step 29">
+      <created>1600634019848</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1600634019848</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fin of del 3">
+      <created>1600642635796</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1600642635796</updated>
+    </task>
+    <task id="LOCAL-00014" summary="creating the prediction files">
+      <created>1601249855797</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1601249855798</updated>
+    </task>
+    <task id="LOCAL-00015" summary="creating the training and testing phases">
+      <created>1601250532271</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601250532271</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Adding a data set">
+      <created>1601254928709</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1601254928709</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Implementing Training">
+      <created>1601305853527</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1601305853527</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Implementing Testing">
+      <created>1601313163295</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1601313163295</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Visualizing the kNN’s behavior.">
+      <created>1601334632290</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1601334632290</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Normalizing the leap coordinates">
+      <created>1601915804009</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1601915804009</updated>
+    </task>
+    <task id="LOCAL-00021" summary="recording multiple frames of data">
+      <created>1601919719527</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1601919719527</updated>
+    </task>
+    <task id="LOCAL-00022" summary="training the KNN on MY data!">
+      <created>1601934095860</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1601934095860</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Testing the kNN on your data.">
+      <created>1601943990305</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1601943990305</updated>
+    </task>
+    <task id="LOCAL-00024" summary="end of dev 5">
+      <created>1602435420892</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1602435420892</updated>
+    </task>
+    <task id="LOCAL-00025" summary="dev 6 - predicting gestures while the user signs them">
+      <created>1602452753529</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1602452753529</updated>
+    </task>
+    <task id="LOCAL-00026" summary="measuring prediction accuracy">
+      <created>1602455027812</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1602455027812</updated>
+    </task>
+    <task id="LOCAL-00027" summary="cleaning the data">
+      <created>1602520073472</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1602520073472</updated>
+    </task>
+    <task id="LOCAL-00028" summary="end dev 6">
+      <created>1602544548848</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1602544548848</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Deliv 7 - Improving prediction for all digits.">
+      <created>1603742521518</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1603742521518</updated>
+    </task>
+    <task id="LOCAL-00030" summary="helping a user get started - hand in left quadrant (plus some code cleanup)">
+      <created>1603743328178</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1603743328178</updated>
+    </task>
+    <task id="LOCAL-00031" summary="end of deliverable 7">
+      <created>1604342891661</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1604342891661</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Deliverable 8 - allowing users to sign in">
+      <created>1604350416443</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1604350416443</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="New file record.html" />
+    <MESSAGE value="New file record.js" />
+    <MESSAGE value="New files playback .js and .html. updated Record.html" />
+    <MESSAGE value="up to step 23" />
+    <MESSAGE value="end of recording section - step 29" />
+    <MESSAGE value="fin of del 3" />
+    <MESSAGE value="creating the prediction files" />
+    <MESSAGE value="creating the training and testing phases" />
+    <MESSAGE value="Adding a data set" />
+    <MESSAGE value="Implementing Training" />
+    <MESSAGE value="Implementing Testing" />
+    <MESSAGE value="Visualizing the kNN’s behavior." />
+    <MESSAGE value="Normalizing the leap coordinates" />
+    <MESSAGE value="recording multiple frames of data" />
+    <MESSAGE value="training the KNN on MY data!" />
+    <MESSAGE value="Testing the kNN on your data." />
+    <MESSAGE value="end of dev 5" />
+    <MESSAGE value="dev 6 - predicting gestures while the user signs them" />
+    <MESSAGE value="measuring prediction accuracy" />
+    <MESSAGE value="cleaning the data" />
+    <MESSAGE value="end dev 6" />
+    <MESSAGE value="Deliv 7 - Improving prediction for all digits." />
+    <MESSAGE value="helping a user get started - hand in left quadrant (plus some code cleanup)" />
+    <MESSAGE value="end of deliverable 7" />
+    <MESSAGE value="Deliverable 8 - allowing users to sign in" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deliverable 8 - allowing users to sign in" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="369" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600125681696">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="369" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1600125681696" />
+    <state x="369" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1600022857415" />
+    <state x="415" y="295" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601944271149">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="415" y="295" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1601944271149" />
+    <state x="421" y="37" key="CommitChangelistDialog2" timestamp="1604350416304">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="71" y="14" key="CommitChangelistDialog2/0.0.1440.900/1440.-387.1920.1080@0.0.1440.900" timestamp="1602520073337" />
+    <state x="421" y="37" key="CommitChangelistDialog2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604350416304" />
+    <state x="1535" y="-348" key="CommitChangelistDialog2/0.23.1440.877/1440.-364.1920.1057@1440.-364.1920.1057" timestamp="1602544548520" />
+    <state x="592" y="31" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1603743328058" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1603656066747">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900/1440.-387.1920.1080@0.0.1440.900" timestamp="1603656066747" />
+    <state x="595" y="201" key="Vcs.Push.Dialog.v2" timestamp="1604350519225">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="595" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604350519225" />
+    <state x="2233" y="-149" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@1440.-364.1920.1057" timestamp="1602564210266" />
+    <state x="494" y="44" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603743330813" />
+    <state x="190" y="162" width="994" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604350525831">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="190" y="162" width="994" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604350525831" />
+    <state x="142" y="224" width="670" height="676" key="search.everywhere.popup" timestamp="1603409910133">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="142" y="224" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1603409910133" />
+  </component>
+</project>

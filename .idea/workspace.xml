@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="650bea1a-a8a2-4b8d-bc39-e52f58f4fa27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PredictGestures.js" beforeDir="false" afterPath="$PROJECT_DIR$/PredictGestures.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prepareToDraw.js" beforeDir="false" afterPath="$PROJECT_DIR$/prepareToDraw.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,9 @@
       <workItem from="1603318010419" duration="378000" />
       <workItem from="1603406157926" duration="14059000" />
       <workItem from="1603741637098" duration="11013000" />
-      <workItem from="1604342823886" duration="10438000" />
+      <workItem from="1604342823886" duration="10982000" />
+      <workItem from="1604410512991" duration="845000" />
+      <workItem from="1604962364540" duration="2818000" />
     </task>
     <task id="LOCAL-00001" summary="Up to step 6 - drawing with each finger">
       <created>1600024500229</created>
@@ -314,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604368958258</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fin of deliv 8">
+      <created>1604370615959</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1604370615959</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,21 +370,21 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="415" y="295" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1601944271149" />
-    <state x="201" y="37" key="CommitChangelistDialog2" timestamp="1604368958132">
+    <state x="201" y="37" key="CommitChangelistDialog2" timestamp="1604370615842">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="71" y="14" key="CommitChangelistDialog2/0.0.1440.900/1440.-387.1920.1080@0.0.1440.900" timestamp="1602520073337" />
-    <state x="201" y="37" key="CommitChangelistDialog2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604368958132" />
+    <state x="201" y="37" key="CommitChangelistDialog2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604370615842" />
     <state x="1535" y="-348" key="CommitChangelistDialog2/0.23.1440.877/1440.-364.1920.1057@1440.-364.1920.1057" timestamp="1602544548520" />
     <state x="592" y="31" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1603743328058" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1603656066747">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900/1440.-387.1920.1080@0.0.1440.900" timestamp="1603656066747" />
-    <state x="318" y="206" key="Vcs.Push.Dialog.v2" timestamp="1604360745517">
+    <state x="318" y="206" key="Vcs.Push.Dialog.v2" timestamp="1604370621292">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="318" y="206" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604360745517" />
+    <state x="318" y="206" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604370621292" />
     <state x="2233" y="-149" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.-364.1920.1057@1440.-364.1920.1057" timestamp="1602564210266" />
     <state x="494" y="44" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603743330813" />
     <state x="190" y="162" width="994" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604350525831">

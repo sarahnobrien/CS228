@@ -26,7 +26,7 @@ function TimeToSwitchDigits(){
     let currentTime = new Date()
     timeInMilliseconds = currentTime - timeSinceLastDigitChange;
     timeInSeconds = timeInMilliseconds / 1000
-    if (timeInSeconds >= 1){
+    if (timeInSeconds >= 6){
         timeSinceLastDigitChange = currentTime;
         return true
     }
@@ -48,13 +48,12 @@ function DrawLowerRightPanel(){
 function GotResults(err, result){
     predictedClassLabels = parseInt(result.label);
 
-
-    console.log(parseInt(result.label));
+    //console.log(parseInt(result.label));
 
     predictionObtained++;
 
-    meanPredictionAccuracy = (((predictionObtained - 1) * meanPredictionAccuracy) + (parseInt(result.label) == 8)) / predictionObtained
-    //console.log(predictionObtained, meanPredictionAccuracy, parseInt(result.label) );
+    meanPredictionAccuracy = (((predictionObtained - 1) * meanPredictionAccuracy) + (parseInt(result.label) == 1)) / predictionObtained
+    console.log(predictionObtained, meanPredictionAccuracy, parseInt(result.label) );
 
 }
 function Train(){
@@ -274,13 +273,13 @@ function Train(){
 }
 
 function Test(){
-    //for (var i = 0; i < 2; i++ ) {
+    for (var i = 0; i < 2; i++ ) {
 //i think not supposed to be for looop
         var currentTestingSample = oneFrameOfData.pick(null, null, null, i);
         CenterData()
         currentTestingSample = currentTestingSample.reshape(120).tolist();
         var predictedLabel = knnClassifier.classify(currentTestingSample, GotResults);
-    //}
+    }
 }
 
 function HandleFrame (frame){
@@ -476,7 +475,7 @@ function HandleState1(frame){
 
 function HandleState2(frame){
     HandleFrame(frame);
-    //Test();
+    Test();
     DrawLowerRightPanel();
     DetermineWhetherToSwitchDigits();
 }
@@ -554,9 +553,9 @@ function DrawArrowTowards(){
 }
 
 function TrainKNNIfNotDoneYet(){
-    // if (trainingCompleted == false) {
-    //     Train();
-    // }
+    if (trainingCompleted == false) {
+        Train();
+    }
 }
 
 function DrawImageToHelpUserPutTheirHandOverTheDevice(){

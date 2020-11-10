@@ -21,6 +21,7 @@ function SwitchDigits(){
     else{
         digitToShow = 1;
     }
+    predictionObtained = 0;
 }
 function TimeToSwitchDigits(){
     let currentTime = new Date()
@@ -52,7 +53,7 @@ function GotResults(err, result){
 
     predictionObtained++;
 
-    meanPredictionAccuracy = (((predictionObtained - 1) * meanPredictionAccuracy) + (parseInt(result.label) == 1)) / predictionObtained
+    meanPredictionAccuracy = (((predictionObtained - 1) * meanPredictionAccuracy) + (parseInt(result.label) == digitToShow)) / predictionObtained
     console.log(predictionObtained, meanPredictionAccuracy, parseInt(result.label) );
 
 }
@@ -306,6 +307,9 @@ function HandleHand(hand, frame, InteractionBox){
 
 function HandleBone(bone,frame,fingerIndex, boneIndex, InteractionBox){
 
+    var R = (1-meanPredictionAccuracy) * 200;
+    var G = meanPredictionAccuracy * 200;
+
     var normalizedPrevJoint = frame.interactionBox.normalizePoint(bone.prevJoint, true);
     var normalizedNextJoint = frame.interactionBox.normalizePoint(bone.nextJoint, true);
 
@@ -331,23 +335,23 @@ function HandleBone(bone,frame,fingerIndex, boneIndex, InteractionBox){
 
     if (bone.type == 0) {
         strokeWeight(15);
-        stroke('rgb(220,220,220)');
+        stroke(R,G,0);
         line(xt, zt, xb, zb);
     }
 
     if (bone.type == 1) {
         strokeWeight(12);
-        stroke('rgb(192,192,192)');
+        stroke(R,G,0);
         line(xt, zt, xb, zb);
     }
     if (bone.type == 2) {
         strokeWeight(10);
-        stroke('rgb(128,128,128)');
+        stroke(R,G,0);
         line(xt, zt, xb, zb);
     }
     else if (bone.type == 3) {
         strokeWeight(8);
-        stroke('rgb(105,105,105)');
+        stroke(R,G,0);
         line(xt, zt, xb, zb);
     }
 

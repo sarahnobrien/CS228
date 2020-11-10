@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="650bea1a-a8a2-4b8d-bc39-e52f58f4fa27" name="Default Changelist" comment="">
+    <list default="true" id="650bea1a-a8a2-4b8d-bc39-e52f58f4fa27" name="Default Changelist" comment="tell the user whether they are succeeding or not">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PredictGestures.js" beforeDir="false" afterPath="$PROJECT_DIR$/PredictGestures.js" afterDir="false" />
     </list>
@@ -70,7 +70,7 @@
       <workItem from="1603741637098" duration="11013000" />
       <workItem from="1604342823886" duration="10982000" />
       <workItem from="1604410512991" duration="845000" />
-      <workItem from="1604962364540" duration="3356000" />
+      <workItem from="1604962364540" duration="6007000" />
     </task>
     <task id="LOCAL-00001" summary="Up to step 6 - drawing with each finger">
       <created>1600024500229</created>
@@ -331,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604965853926</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="detecting a correctly assigned digit">
+      <created>1604968859133</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1604968859133</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,8 +346,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="end of recording section - step 29" />
-    <MESSAGE value="fin of del 3" />
     <MESSAGE value="creating the prediction files" />
     <MESSAGE value="creating the training and testing phases" />
     <MESSAGE value="Adding a data set" />
@@ -364,7 +369,9 @@
     <MESSAGE value="distinguishing between new and returning users" />
     <MESSAGE value="fin of deliv 8" />
     <MESSAGE value="deliv 9 - Challenge the user to sign an ASL digit." />
-    <option name="LAST_COMMIT_MESSAGE" value="deliv 9 - Challenge the user to sign an ASL digit." />
+    <MESSAGE value="detecting a correctly assigned digit" />
+    <MESSAGE value="tell the user whether they are succeeding or not" />
+    <option name="LAST_COMMIT_MESSAGE" value="tell the user whether they are succeeding or not" />
   </component>
   <component name="WindowStateProjectService">
     <state x="369" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600125681696">
@@ -376,13 +383,13 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="415" y="295" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1601944271149" />
-    <state x="592" y="31" key="CommitChangelistDialog2" timestamp="1604965853706">
+    <state x="592" y="31" key="CommitChangelistDialog2" timestamp="1604970261196">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="71" y="14" key="CommitChangelistDialog2/0.0.1440.900/1440.-387.1920.1080@0.0.1440.900" timestamp="1602520073337" />
     <state x="201" y="37" key="CommitChangelistDialog2/0.23.1440.877/1440.-364.1920.1057@0.23.1440.877" timestamp="1604370615842" />
     <state x="1535" y="-348" key="CommitChangelistDialog2/0.23.1440.877/1440.-364.1920.1057@1440.-364.1920.1057" timestamp="1602544548520" />
-    <state x="592" y="31" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1604965853706" />
+    <state x="592" y="31" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1604970261196" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1603656066747">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
